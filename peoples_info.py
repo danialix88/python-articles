@@ -1,6 +1,6 @@
 def get_person_info():
-    person = []
     """Get a person's name, weight, and height from the user. Returns A list."""
+    person = []
     name = input(f"Enter person's name: ")
     weight = input(f"Enter person's weight (kg): ")
     height = input(f"Enter person's height (m): ")
