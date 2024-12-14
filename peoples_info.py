@@ -1,9 +1,6 @@
 def get_person_info():
     person = []
-    """Gets a person's name, weight, and height from the user.
-    Returns:
-        A list containing the name, weight, and height.
-    """
+    """Get a person's name, weight, and height from the user. Returns A list."""
     name = input(f"Enter person's name: ")
     weight = input(f"Enter person's weight (kg): ")
     height = input(f"Enter person's height (m): ")
@@ -20,7 +17,7 @@ def get_person_info():
             person.append(None)
         return person
     else:
-        print(f"\nName must be entered.")
+        print(f"\nPerson must have name.")
 
 def add_person(people_list, person_info):
     """Adds a person to the list, checking for duplicates."""
@@ -53,12 +50,14 @@ def remove_person(people_list):
     return people_list
 
 def get_bmi(weight, height):
+    """Calculate BMI"""
     if height and weight:
         return weight / (height ** 2)
     else:
         return False
 
 def bmi_status(bmi):
+    """Retrun BMI Status."""
     if bmi < 18.5:
         status = 'Skinny'
     elif 18.5 <= bmi < 24:
@@ -68,6 +67,7 @@ def bmi_status(bmi):
     return f", BMI: {bmi:.2f} And you are {status}"
 
 def search(people_list):
+    """Search a person in list of people, By name."""
     name_to_search = input("Enter the name of the person to search: ")
     for person in people_list:
         if person[0] == name_to_search:
@@ -112,6 +112,7 @@ def main():
         print("3. Search a person")
         print("4. Display people")
         print("5. Quit")
+        print("--------------------")
 
         choice = input("Enter your choice: ")
 
@@ -132,5 +133,5 @@ def main():
         else:
             print("Invalid choice. Please try again.")
 
-if __name__ == main:
+if __name__ == "__main__":
     main()
